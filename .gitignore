@@ -1,0 +1,5 @@
+data/linkedin_job_postings.csv
+data/job_skills.csv
+data/job_summary.csv
+output/
+__pycache__/
