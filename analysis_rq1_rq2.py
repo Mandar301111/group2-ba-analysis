@@ -203,7 +203,9 @@ gn = t50.group.value_counts()
 if c.empty:
     print('WARNING: Figure 4 skipped - one advertiser group is empty '
           '(check data/advertiser_types.csv covers the top 50).')
-fig, ax = plt.subplots(figsize=(8, 4.6))
+fig, ax = plt.subplots(figsize=(8, 3.9))
+ax.grid(axis='x', color='#e6e6e6', lw=0.8); ax.set_axisbelow(True)
+ax.tick_params(colors='#555555')
 ax.hlines(c.skill, c.intermediary_pct, c.employer_pct, color=GREY, lw=3)
 ax.scatter(c.intermediary_pct, c.skill, color=BLUE, s=50, zorder=3,
            label=f"Intermediary (staffing / job board), n = {gn.get('Intermediary', 0):,}")

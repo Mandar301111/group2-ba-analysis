@@ -85,8 +85,8 @@ recognised. Add those labels to `METRO_MAP` (single-state metros) or `MULTI_STAT
 
 The last block of `analysis_rq1_rq2.py` compares the script's results with the values
 printed in the report and prints `OK` or `DIFF` for each. The advertiser-type file must
-cover all 50 top advertisers for the RQ2 type figures to match; the script lists any
-top-50 advertiser that has no type. Coded totals in the report, for checking the file:
+cover all 50 top advertisers for the RQ2 type figures to match (it does); the script lists any
+top-50 advertiser that has no type. Coded totals in the report:
 
 | Type | Top-50 advertisers | Top-50 ads |
 |------|-------------------|-----------|
@@ -95,6 +95,9 @@ top-50 advertiser that has no type. Coded totals in the report, for checking the
 | Job board / aggregator | 4 | 250 |
 | IT services & consulting | 7 | 165 |
 | **Total** | **50** | **1,491** |
+
+Verified run (17 Nov 2026, full Kaggle data via `extract_ba_subset.py`): all 15 RQ1/RQ2
+checks print `OK`.
 
 Figure 1 (pipeline) is a diagram and has no script.
 
