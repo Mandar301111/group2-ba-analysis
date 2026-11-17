@@ -17,6 +17,7 @@ to this repository by the members responsible for them.
 ## Repository layout
 
 ```
+extract_ba_subset.py         optional: cut the Kaggle zip to BA ads (low memory)
 prep.py                      populations used by every RQ  -> output/ba_validated.csv, ba_skills_long.csv
 analysis_rq1_rq2.py          RQ1 + RQ2 tables, tests, Figures 2-4, check against report values
 data/
@@ -33,6 +34,17 @@ Download *1.3M LinkedIn Jobs & Skills (2024)* (asaniczka 2024) from Kaggle:
 <https://www.kaggle.com/datasets/asaniczka/1-3m-linkedin-jobs-and-skills-2024>
 and put `linkedin_job_postings.csv` and `job_skills.csv` in `data/`. They are too large
 for GitHub and are listed in `.gitignore`.
+
+## Low-memory option
+
+The full files are large. To skip unzipping and loading 1.3 million rows, cut the Kaggle
+zip down to the BA ads first (reads in chunks, writes small files into `data/`):
+
+```bash
+python extract_ba_subset.py path/to/archive.zip
+```
+
+RQ1/RQ2 results are the same, because `prep.py` only uses BA-titled ads.
 
 ## How to run
 
